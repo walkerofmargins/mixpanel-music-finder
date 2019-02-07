@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- PASTE MIXPANEL SNIPPET BELOW HERE -->
+
+	<meta charset="UTF-8">
+	<title>Music Finder</title>
+	<script type="text/javascript">
+		if (!sessionStorage.loggedIn) {
+			window.location.replace("index.html");
+		}
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="js/mixpanel.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		var pageName = "Homepage";
+	</script>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body id="homeBody">
+
+	<header>
+		<div class="leftContainer">
+			<span id="logo">Music Finder</span> brought to you by <a id="mixpanelLink" href="http://mixpanel.com">Mixpanel</a>
+		</div>
+		<div class="rightContainer">
+			<span id="upgradeButton">Upgrade</span>
+			<span id="downgradeButton">Downgrade</span>
+			<span id="logoutButton">Logout</span>
+		</div>
+	</header>
+	<div id="mainContainer">
+
+		<div class="genreContainer" data-genre="Hip-Hop">
+			<div class="songContainer" data-title="Norf Norf" data-artist="Vince Staples" data-duration="333" data-genre="hip-hop" data-price="0.99">
+				<span class="title">Norf Norf</span> by <span class="artist">Vince Staples</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Grown Up" data-artist="Danny Brown" data-duration="333" data-genre="hip-hop" data-price="0.99">
+				<span class="title">Grown Up</span> by <span class="artist">Danny Brown</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Street Knowledge" data-artist="Ghostface Killah" data-duration="333" data-genre="hip-hop" data-price="0.99">
+				<span class="title">Street Knowledge</span> by <span class="artist">Ghostface Killah</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Everything I Am" data-artist="Kanye West" data-duration="333" data-genre="hip-hop" data-price="0.99">
+				<span class="title">Everything I Am</span> by <span class="artist">Kanye West</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Root of All Evil" data-artist="Underachievers" data-duration="333" data-genre="hip-hop" data-price="0.99">
+				<span class="title">Root of All Evil</span> by <span class="artist">Underachievers</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+		</div>
+
+		<div class="genreContainer" data-genre="Folk">
+			<div class="songContainer" data-title="Fake Palindromes" data-artist="Andrew Bird" data-duration="333" data-genre="Folk" data-price="0.99">
+				<span class="title">Fake Palindromes</span> by <span class="artist">Andrew Bird</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Montezuma" data-artist="Fleet Foxes" data-duration="333" data-genre="Folk" data-price="0.99">
+				<span class="title">Montezuma</span> by <span class="artist">Fleet Foxes</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Late July" data-artist="Shakey Graves" data-duration="333" data-genre="Folk" data-price="0.99">
+				<span class="title">Late July</span> by <span class="artist">Shakey Graves</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="We're All In This Together" data-artist="Old Crow Medicine Show" data-duration="333" data-genre="Folk" data-price="0.99">
+				<span class="title">We're All In This Together</span> by <span class="artist">Old Crow Medicine Show</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Beggar In The Morning" data-artist="The Barr Brothers" data-duration="333" data-genre="Folk" data-price="0.99">
+				<span class="title">Beggar In The Morning</span> by <span class="artist">The Barr Brothers</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+		</div>
+
+		<div class="genreContainer" data-genre="Electronic">
+			<div class="songContainer" data-title="I'm Sorry" data-artist="Swell" data-duration="333" data-genre="Electronic" data-price="0.99">
+				<span class="title">I'm Sorry</span> by <span class="artist">Swell</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="How Did I Get Here" data-artist="Odesza" data-duration="333" data-genre="Electronic" data-price="0.99">
+				<span class="title">How Did I Get Here</span> by <span class="artist">Odesza</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="I Know There's Gonna Be" data-artist="Jamie xx" data-duration="333" data-genre="Electronic" data-price="0.99">
+				<span class="title">I Know There Gonna Be</span> by <span class="artist">Jamie xx</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Jasmine" data-artist="Jai Paul" data-duration="333" data-genre="Electronic" data-price="0.99">
+				<span class="title">Jasmine</span> by <span class="artist">Jai Paul</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Drop The Game" data-artist="Chet Faker" data-duration="333" data-genre="Electronic" data-price="0.99">
+				<span class="title">Drop The Game</span> by <span class="artist">Chet Faker</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+		</div>
+
+		<div class="genreContainer" data-genre="Classical">
+			<div class="songContainer" data-title="Air on the G String" data-artist="Johann Sebastian Bach" data-duration="333" data-genre="Classical" data-price="0.99">
+				<span class="title">Air on the G String</span> by <span class="artist">Johann Sebastian Bach</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Canon in D Major" data-artist="Johann Pachelbel" data-duration="333" data-genre="Classical" data-price="0.99">
+				<span class="title">Canon in D Major</span> by <span class="artist">Johann Pachelbel</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Allegro Moderato" data-artist="Pyotr Ilyich Tchaikovsky" data-duration="333" data-genre="Classical" data-price="0.99">
+				<span class="title">Allegro Moderato</span> by <span class="artist">Pyotr Ilyich Tchaikovsky</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Requiem: Lacrimosa" data-artist="Wolfgang Amadeus Mozart" data-duration="333" data-genre="Classical" data-price="0.99">
+				<span class="title">Requiem: Lacrimosa</span> by <span class="artist">Wolfgang Amadeus Mozart</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Salvation is Created" data-artist="Pavel Chesnokov" data-duration="333" data-genre="Classical" data-price="0.99">
+				<span class="title">Salvation is Created</span> by <span class="artist">Pavel Chesnokov</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+		</div>
+
+		<div class="genreContainer" data-genre="Rock">
+			<div class="songContainer" data-title="Hey" data-artist="The Pixies" data-duration="333" data-genre="Rock" data-price="0.99">
+				<span class="title">Hey</span> by <span class="artist">The Pixies</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="D'yer Mak'er" data-artist="Led Zeppelin" data-duration="333" data-genre="Rock" data-price="0.99">
+				<span class="title">D'yer Mak'er</span> by <span class="artist">Led Zeppelin</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Whipping Post" data-artist="The Allman Brothers Band" data-duration="333" data-genre="Rock" data-price="0.99">
+				<span class="title">Whipping Post</span> by <span class="artist">The Allman Brothers Band</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Rock the Casbah" data-artist="The Clash" data-duration="333" data-genre="Rock" data-price="0.99">
+				<span class="title">Rock the Casbah</span> by <span class="artist">The Clash</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+			<div class="songContainer" data-title="Beast Of Burden" data-artist="The Rolling Stones" data-duration="333" data-genre="Rock" data-price="0.99">
+				<span class="title">Beast Of Burden</span> by <span class="artist">The Rolling Stones</span>
+				<div class="songActionContainer">
+					<button class="playButton">Play</button><button class="purchaseButton">Buy</button>	
+				</div>
+			</div>
+		</div>
+			
+	</div>
+
+</body>
+</html>

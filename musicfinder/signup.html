@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- PASTE MIXPANEL SNIPPET BELOW HERE -->
+
+	<meta charset="UTF-8">
+	<title>Music Finder | Signup</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="js/mixpanel.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		var pageName = "Signup Page";
+		signupPageViewed();
+	</script>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body id="signupBody">
+	
+	<header>
+		<div class="leftContainer">
+			<a href="index.html"><span id="logo">Music Finder</span></a> brought to you by <a id="mixpanelLink" href="http://mixpanel.com">Mixpanel</a>
+		</div>
+	</header>
+	<div id="mainContainer">
+		<div class="form">
+			<div class="formRow">
+				<label for="name">Name: </label><input type="text" name="name" id="name" autocomplete="off" spellcheck="false">
+			</div>
+			<div class="formRow">
+				<label for="email">Email: </label><input type="text" name="email" id="email" autocomplete="off" spellcheck="false">
+			</div>
+			<div class="formRow">
+				<label for="password">Password: </label><input type="password" name="password" id="password">
+			</div>
+			<div class="formRow">
+				<select name="genre" id="genre">
+					<option value="Classical">Classical</option>
+					<option value="Electronic">Electronic</option>
+					<option value="Folk">Folk</option>
+					<option value="Hip-Hop">Hip-Hop</option>
+					<option value="Rock">Rock</option>
+				</select>
+			</div>
+			<div class="formRow">
+				<select name="plan" id="plan">
+					<option value="Free">Free</option>
+					<option value="Premium">Premium</option>
+				</select>
+			</div>
+			<div class="center">
+				<button id="signupButton">Signup</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

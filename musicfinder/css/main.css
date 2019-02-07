@@ -1,0 +1,162 @@
+@font-face {
+	font-family: Prisma;
+	src: url('../fonts/Prisma.otf');
+}
+
+@font-face {
+	font-family: Bebas;
+	src: url('../fonts/BebasNeue.otf');
+}
+
+body, html {
+	margin: 0px;
+	height: 100%;
+	background-color: #ADC7BE;
+	font-family: Bebas;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+input {
+	border: none;
+	background-color: transparent;
+	outline: none;
+}
+
+#indexBody {
+	background-image: url("../img/concert.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+header {
+	background-color: #F7F4F2;
+	padding: 25px;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	box-shadow: 0 13px 13px -13px #000000;
+}
+
+header .leftContainer {
+	display: inline-block;
+	float: left;
+	margin-left: 33px;
+}
+
+header .rightContainer {
+	display: inline-block;
+	float: right;
+	margin-right: 58px;
+}
+
+header .rightContainer span {
+	margin-left: 33px;
+	cursor: pointer;
+	font-family: Bebas;
+	font-size: 33px;
+	color: #3B2824;
+}
+
+header .rightContainer span:hover {
+	color: #ADC7BE;
+}
+
+#logo {
+	font-family: Prisma;
+	font-size: 50px;
+	color: #ADC7BE;
+	margin-right: 10px;
+}
+
+
+
+#mainContainer {
+	max-width: 1000px;
+	margin: auto;
+	padding: 33px;
+	padding-top: 133px;
+
+}
+
+.form {
+	font-size: 33px;		
+}
+
+.form label {
+	color: #F7F4F2;
+}
+
+.formRow {
+	margin: 33px;
+	
+}
+
+.formRow input, select {
+	font-size: 33px;
+	font-family: Bebas;
+	color: #3B2824;
+}
+
+.center {
+	text-align: center;
+}
+
+button {
+	border: none;
+	border-radius: 13px;
+	background-color: #3B2824;
+	font-size: inherit;
+	font-family: inherit;
+	padding: 13px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #F7F4F2;
+	outline: none;
+}
+
+button:hover {
+	color: #3B2824;
+	background-color: #F7F4F2;
+	cursor: pointer;
+}
+
+.songContainer {
+	font-size: 33px;
+	color: #3B2824;
+	margin-bottom: 33px;
+	border-bottom: 3px solid #F7F4F2;
+	width: 700px;
+	margin: auto;
+	text-align: center;
+	padding: 33px;
+}
+
+.songContainer:last-child {
+	border-bottom: none;
+}
+
+.songActionContainer button {
+	margin: 13px;
+}
+
+.songContainer .title, .songContainer .artist {
+	color: #F7F4F2;
+}
+
+.genreContainer {
+	display: none;
+}
+
+#mixpanelLink {
+	color: #ADC7BE;
+}
+
+#mixpanelLink:hover {
+	text-decoration: underline;
+}
+
