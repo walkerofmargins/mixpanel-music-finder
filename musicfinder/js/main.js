@@ -1,30 +1,34 @@
 $(document).ready(function(){
-	
+
 	$("input").first().focus();
 
 	$(".playButton").click(function(){
-		var title = $(this).closest(".songContainer").attr("data-title");
-		var artist = $(this).closest(".songContainer").attr("data-artist");
-		var genre = $(this).closest(".songContainer").attr("data-genre");
-		var duration = $(this).closest(".songContainer").attr("data-duration");
-		songPlayed(title,artist,genre,duration);
+		var song = {
+			title: $(this).closest(".songContainer").attr("data-title"),
+			artist: $(this).closest(".songContainer").attr("data-artist"),
+			genre: $(this).closest(".songContainer").attr("data-genre"),
+			duration: $(this).closest(".songContainer").attr("data-duration")
+		}
+		songPlayed(song);
 		alert("Song was played!");
 	});
 
 	$(".purchaseButton").click(function(){
-		var title = $(this).closest(".songContainer").attr("data-title");
-		var artist = $(this).closest(".songContainer").attr("data-artist");
-		var genre = $(this).closest(".songContainer").attr("data-genre");
-		var duration = $(this).closest(".songContainer").attr("data-duration");
-		var price = $(this).closest(".songContainer").attr("data-price");
-		songPurchased(title,artist,genre,duration,price);
+		var song = {
+			title: $(this).closest(".songContainer").attr("data-title"),
+			artist: $(this).closest(".songContainer").attr("data-artist"),
+			genre: $(this).closest(".songContainer").attr("data-genre"),
+			duration: $(this).closest(".songContainer").attr("data-duration"),
+			price: $(this).closest(".songContainer").attr("data-price")
+		}
+		songPurchased(song);
 		alert("Song was purchased!");
 	});
 
 	$("#upgradeButton").click(function(){
 		var email = sessionStorage.email;
 		$.get(
-			"http://musicfinder.live/auth.php",
+			config.auth,
 			{
 				action: "upgrade",
 				email: email
@@ -34,6 +38,7 @@ $(document).ready(function(){
 					alert("Server Error: please contact Neema");
 				}
 				else {
+					sessionStorage.plan = "Premium";
 					planUpgraded();
 					$("#upgradeButton").hide();
 					$("#downgradeButton").show();
@@ -47,7 +52,7 @@ $(document).ready(function(){
 	$("#downgradeButton").click(function(){
 		var email = sessionStorage.email;
 		$.get(
-			"http://musicfinder.live/auth.php",
+			config.auth,
 			{
 				action: "downgrade",
 				email: email
@@ -57,6 +62,7 @@ $(document).ready(function(){
 					alert("Server Error: please contact Neema");
 				}
 				else {
+					sessionStorage.plan = "Free";
 					planDowngraded();
 					$("#upgradeButton").show();
 					$("#downgradeButton").hide();
@@ -73,7 +79,7 @@ $(document).ready(function(){
 		var password = $("input[name='password']").val();
 		
 		$.get(
-			"http://musicfinder.live/auth.php",
+			config.auth,
 			{
 				action: "login",
 				email: email,
@@ -94,6 +100,7 @@ $(document).ready(function(){
 					sessionStorage.plan = user.plan;
 					sessionStorage.loggedIn = true;
 					sessionStorage.justLoggedIn = true;
+					sessionStorage.id = user.id;
 					setTimeout(function(){
 						window.location.href = "home.html";
 					},333);
@@ -109,10 +116,12 @@ $(document).ready(function(){
 		var email = $("input[name='email']").val().toLowerCase();
 		var password = $("input[name='password']").val();
 		var genre = $("select[name='genre']").val();
-		var plan = $("select[name='plan']").val();
-		
+		var plan;
+		if (config.plan) {
+			plan = $("select[name='plan']").val();
+		}
 		$.get(
-			"http://musicfinder.live/auth.php",
+			config.auth,
 			{
 				action: "signup",
 				email: email,
@@ -129,6 +138,7 @@ $(document).ready(function(){
 				}
 				else {
 					var user = JSON.parse(data);
+					sessionStorage.id = user.id;
 					sessionStorage.email = email;
 					sessionStorage.name = name;
 					sessionStorage.genre = genre;
@@ -147,12 +157,26 @@ $(document).ready(function(){
 
 	if (sessionStorage.justLoggedIn) {
 		sessionStorage.removeItem("justLoggedIn");
-		login(sessionStorage.email);
+		var user = {
+			name: sessionStorage.name,
+			email: sessionStorage.email,
+			favorite_genre: sessionStorage.genre,
+			plan: sessionStorage.plan,
+			id: sessionStorage.id
+		}
+		login(user);
 	}
 
 	if (sessionStorage.justCreatedAccount) {
 		sessionStorage.removeItem("justCreatedAccount");
-		accountCreated(sessionStorage.name,sessionStorage.email,sessionStorage.genre,sessionStorage.plan);
+		var user = {
+			name: sessionStorage.name,
+			email: sessionStorage.email,
+			favorite_genre: sessionStorage.genre,
+			plan: sessionStorage.plan,
+			id: sessionStorage.id
+		}
+		accountCreated(user);
 	}
 
 	$("#logoutButton").click(function(){
@@ -162,11 +186,13 @@ $(document).ready(function(){
 		},333);
 	});
 
-	if (sessionStorage.plan == "Premium") {
-		$("#upgradeButton").hide();
-	}
-	if (sessionStorage.plan == "Free") {
-		$("#downgradeButton").hide();
+	if (config.plan) {
+		if (sessionStorage.plan == "Premium") {
+			$("#upgradeButton").hide();
+		}
+		if (sessionStorage.plan == "Free") {
+			$("#downgradeButton").hide();
+		}
 	}
 
 	if (sessionStorage.genre) {
