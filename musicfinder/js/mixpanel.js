@@ -4,22 +4,30 @@ function signupPageViewed() {
 }
 
 // This function executes after a user successfully signs up
-function accountCreated(name, email, genre, plan) {
-
+// The "user" object contains the following properties: name, email, favorite_genre, plan, id
+// e.g. calling user.id will return the user's id
+function accountCreated(user) {
+	
 }
 
 // This function executes when a user successfully logs in
-function login(email) {
+// The "user" object contains the following properties: name, email, favorite_genre, plan, id
+// e.g. calling user.id will return the user's id
+function login(user) {
 	
 }
 
 // This function executes every time a song is played
-function songPlayed(title, artist, genre, duration) {
+// The "song" object contains the following properties: title, artist, genre, duration
+// e.g. calling song.title will return the song's title
+function songPlayed(song) {
 	
 }
 
 // This function executes every time a song is purchased
-function songPurchased(title, artist, genre, duration, price) {
+// The "song" object contains the following properties: title, artist, genre, duration, price
+// e.g. calling song.title will return the song's title
+function songPurchased(song) {
 	
 }
 
